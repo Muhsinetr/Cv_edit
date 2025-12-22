@@ -127,6 +127,14 @@
             <option value="HSE">HSE</option>
             <option value="Safety">Safety</option>
         </select>
+    </div>
+    <div class="input-group">
+        <label>Position</label>
+        <select id="positionSelect">
+            <option value="Officer">Officer</option>
+            <option value="Supervisor">Supervisor</option>
+            <option value="Technician">Technician</option>
+        </select>
         <button class="add-btn" onclick="updateText('field')">Add</button>
     </div>
 
@@ -136,7 +144,7 @@
   
 Dear Hiring Manager,
 
-    I am writing to express my interest in the <b id="fieldPlaceholder1"></b> Officer position in <b id="locPlaceholder"></b> as advertised. With over three years of experience as a Safety Officer in the construction industry, I have developed strong expertise in risk assessments, incident investigations, safety audits, and employee training.
+    I am writing to express my interest in the <b id="fieldPlaceholder1"></b> position in <b id="locPlaceholder"></b> as advertised. With over three years of experience as a Safety Officer in the construction industry, I have developed strong expertise in risk assessments, incident investigations, safety audits, and employee training.
 
     I hold a NEBOSH International General Certificate (IGC) and a Diploma in Health & Safety Environment Management, which have equipped me with a solid foundation to ensure compliance with both international and local safety standards. In my current role, I have successfully developed and implemented safety programs that reduced workplace incidents and fostered a strong safety culture among employees and contractors.
 
@@ -154,7 +162,7 @@ muhsnvemmully1@gmail.com
     </div>
 
     <div class="output-box" id="box2">
-Application for <b id="fieldPlaceholder"></b> Officer Position
+Application for <b id="fieldPlaceholder"></b> Position
         <button class="copy-btn" onclick="copyText('box2')">Copy</button>
     </div>
 </div>
@@ -166,8 +174,10 @@ Application for <b id="fieldPlaceholder"></b> Officer Position
             document.getElementById('locPlaceholder').innerText = val;
             document.getElementById('locPlaceholder2').innerText = val;
             const val2 = document.getElementById('fieldSelect').value;
-            document.getElementById('fieldPlaceholder').innerText = val2;
-            document.getElementById('fieldPlaceholder1').innerText = val2;
+            const val2pos = document.getElementById('positionSelect').value;
+            
+            document.getElementById('fieldPlaceholder').innerText = val2 + " "+val2pos;
+            document.getElementById('fieldPlaceholder1').innerText = val2 + " "+val2pos;
         }
     }
 
